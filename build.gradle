@@ -37,9 +37,12 @@ dependencies {
 }
 
 
-
-
 test {
     useJUnitPlatform()
-    systemProperties(System.getProperties())
+}
+
+task demoqa_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("demoqa")
+    }
 }

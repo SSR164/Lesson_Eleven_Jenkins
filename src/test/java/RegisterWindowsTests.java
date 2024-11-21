@@ -1,5 +1,8 @@
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import page.RegisterPage;
 import org.junit.jupiter.api.Test;
+
 
 
 public class RegisterWindowsTests extends TestsBase {
@@ -8,6 +11,7 @@ public class RegisterWindowsTests extends TestsBase {
 
 
     @Test
+    @Tag("demoqa")
     void testsFullData() {
         registerPage.openPage();
         registerPage.cleanBanner();
