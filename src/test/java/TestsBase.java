@@ -10,9 +10,6 @@ public class TestsBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
         Configuration.timeout = 5000; // default 4000
-        Configuration.browser = "chrome";
-        Configuration.headless = true; // Если работаете на headless-сервере
-
 
     }
 }
