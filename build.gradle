@@ -1,12 +1,30 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'io.qameta.allure' version '2.12.0' // Обновлено
 }
 
 
-version = '1.0-SNAPSHOT'
+allure {
+    report {
+        version.set("2.29.0") // Согласованная версия
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.29.0") // Согласованная версия
+            }
+        }
+    }
+}
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
@@ -14,10 +32,14 @@ dependencies {
             "com.codeborne:selenide:6.19.1",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             'org.slf4j:slf4j-simple:2.0.7',
-            'com.github.javafaker:javafaker:1.0.2'
-    )
+            'com.github.javafaker:javafaker:1.0.2',
+            'io.qameta.allure:allure-selenide:2.29.0') // Согласованная версия
 }
+
+
+
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
