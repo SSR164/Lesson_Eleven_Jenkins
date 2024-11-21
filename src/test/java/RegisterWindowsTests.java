@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
 import page.RegisterPage;
 import org.junit.jupiter.api.Test;
 
