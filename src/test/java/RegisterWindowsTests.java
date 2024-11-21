@@ -54,7 +54,41 @@ public class RegisterWindowsTests extends TestsBase {
         registerPage.clickSubmit();
         registerPage.checkTableNotVisible();
     }
+    @Test
+    @Tag("demoqa")
+    void testsNegativeMobileLetters() {
+        registerPage.openPage();
+        registerPage.cleanBanner();
+        registerPage.setFirstName(testData.firstName);
+        registerPage.setLastName(testData.lastName);
+        registerPage.setUserEmail(testData.userEmail);
+        registerPage.setGenderWrapper(testData.randomGender);
+        registerPage.setUserNumber(testData.userPhoneNumberNotCorrect);
+        registerPage.chooseCalendar(testData.randomDay, testData.randomMonth, testData.randomYear);
+        registerPage.clickSubmit();
+        registerPage.checkTableNotVisible();
+    }
 
+
+    @Test
+    @Tag("demoqa")
+    void testsMinData() {
+        registerPage.openPage();
+        registerPage.cleanBanner();
+        registerPage.setFirstName(testData.firstName);
+        registerPage.setLastName(testData.lastName);
+        registerPage.setUserEmail(testData.userEmail);
+        registerPage.setGenderWrapper(testData.randomGender);
+        registerPage.setUserNumber(testData.userPhoneNumberCorrect);
+        registerPage.chooseCalendar(testData.randomDay, testData.randomMonth, testData.randomYear);
+        registerPage.clickSubmit();
+        registerPage.checkTableResponsive("Student Name", testData.fullName);
+        registerPage.checkTableResponsive("Student Email", testData.userEmail);
+        registerPage.checkTableResponsive("Gender", testData.randomGender);
+        registerPage.checkTableResponsive("Mobile", testData.userPhoneNumberCorrect);
+        registerPage.checkTableResponsive("Date of Birth", testData.fullDate);
+
+    }
 
 }
 
