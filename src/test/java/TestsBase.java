@@ -13,12 +13,19 @@ public class TestsBase {
 Attach attach = new Attach();
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        //Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadStrategy = "eager";
         //Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 5000; // default 4000
-        Configuration.remote="https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.remote = System.getProperty("remoteUrl");
+        //String login = System.getProperty("login", "defaultUser");  // Логин по умолчанию
+        //String password = System.getProperty("password", "defaultPassword");  // Пароль по умолчанию
+
+        //Configuration.browserSize = "1920x1080";
+        //Configuration.timeout = 5000; // default 4000
+        //Configuration.remote="https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
