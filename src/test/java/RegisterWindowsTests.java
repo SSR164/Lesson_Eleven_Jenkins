@@ -12,7 +12,7 @@ public class RegisterWindowsTests extends TestsBase {
 
     @Test
     @Tag("demoqa")
-    void testsFullData() {
+    void FullDataTests() {
         step("Open form",()->{
             registerPage.openPage();
             registerPage.cleanBanner();});
@@ -47,7 +47,7 @@ public class RegisterWindowsTests extends TestsBase {
 
     @Test
     @Tag("demoqa")
-    void testsNegativeMobileLMin() {
+    void NegativeMobileLMinTests() {
         step("Open form",()->{
             registerPage.openPage();
             registerPage.cleanBanner();});
@@ -64,7 +64,7 @@ public class RegisterWindowsTests extends TestsBase {
     }
     @Test
     @Tag("demoqa")
-    void testsNegativeMobileLetters() {
+    void NegativeMobileLettersTests() {
         step("Open form",()->{
             registerPage.openPage();
             registerPage.cleanBanner();});
@@ -83,7 +83,7 @@ public class RegisterWindowsTests extends TestsBase {
 
     @Test
     @Tag("demoqa")
-    void testsMinData() {
+    void MinDataTests() {
         step("Open form",()->{
             registerPage.openPage();
             registerPage.cleanBanner();});

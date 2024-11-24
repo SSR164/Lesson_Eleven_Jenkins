@@ -105,7 +105,7 @@ public class RegisterPage {
     }
 
     public RegisterPage clickSubmit() {
-        submitInput.click();
+        submitInput.scrollTo().click();
         return this;
     }
 
